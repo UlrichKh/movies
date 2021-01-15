@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+
+  backend:
+    build: ./
+    container_name: backend_movies
+    restart: always
+    command: ./commands/dev.sh
+
+    ports:
+      - 8015:${PORT}
+    volumes:
+      - ./src:/srv/movies
+      - ./commands:/srv/movies/commands
+      - static_content:/var/www/movies
+    env_file:
+      - .env
+
+  # nginx:
+  #   env_file: 
+  #     - .env
+  #   image: nginx:1.19-alpine
+  #   volumes:
+  #     - ./nginx:/etc/nginx/conf.d
+  #     - static_content:/var/www/movies
+  #   ports:
+  #    - 81:81
+  #    - 446:447
+  #   depends_on:
+  #     - backend
+
+
+volumes:
+  static_content: {}
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
