@@ -1,6 +1,6 @@
 from rest_framework import generics
 
-from movies.api.serializers import MovieSerializer, MovieAllSerializer
+from movies.api.serializers import MovieSerializer
 from movies.models import Movie
 
 class MovieListView(generics.ListAPIView):
