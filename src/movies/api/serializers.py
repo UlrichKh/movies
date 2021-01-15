@@ -13,8 +13,6 @@ class MovieAllSerializer(serializers.ModelSerializer):
             'image',
             'rating',
             'country',
-            'actors_array',
-            'directors_array',
             'genre',
         )
 
