@@ -26,12 +26,14 @@ SECRET_KEY = '8(hfq$7x#lt@tvy4ikuxkv!1**7!sl6ezr^j+3+enthk=1^2ov'
 DEBUG = True
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(':')
+ALLOWED_HOSTS += ['127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
     'movies',
+    'love',
 
     'rest_framework',
 

@@ -1,0 +1,20 @@
+{% extends 'love/layout.html' %}
+
+{% block title %}Love{% endblock %}
+
+{% block body %}
+<div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Привет, Паичка. С праздником!</h5>
+    <p class="card-text">Я не купил валентинку, и думаю, что это будет даже поприкольней, что я сделаю для тебя сам!
+    Калочи, тут такое дело - за кнопафкой спьятано фто-та!</p>
+    <a href="{% url 'love:val' %}" class="btn btn-primary">Пафматйеть фто там!</a>
+  </div>
+  <div class="card-footer text-muted">
+    От Аефки!
+  </div>
+</div>
+{% endblock %}
